@@ -53,3 +53,5 @@ while True:
 
 average = sum(numlist) / len(numlist)
 
+# from the freecodecamp, Split breaks a string into parts and produces a list of strings.
+# we think of these as words. We can access a particular word or loop through all the words.
