@@ -29,15 +29,15 @@ list.append(2)
 list.append(3)
 
 # dict
-dict = dict()
-dict['age'] = 12
-dict['course']  = 182
+dict1 = dict()
+dict1['age'] = 12
+dict1['course']  = 182
 
 print(list) # return [1, 2, 3]
-print(dict) # return {'age': 12, 'course': 182}
+print(dict1) # return {'age': 12, 'course': 182}
 
 #          list                      Dict
-#  key             value     key              value 
+#  key            value     key              value 
 #  [0]               1       age                12
 #  [1]               2       course             182
 
@@ -46,3 +46,21 @@ pp = { }
 bb = {'a':1, 'b':2, 'c':3}
 print(type(pp))
 print(dir(pp))
+
+# Dictionary Tracebacks
+
+bb = dict()
+
+#'cese' in bbb 
+# true indicates 'cese' in bbb, flase indicates 'cese' not in bbb
+
+# counting names, if the name repeat , the value add 1 otherwise, value is 1
+
+counts = dict()
+names = ['aaa','bbb','aaa','bbb','ccc','eee','fff']
+for name in names:
+    if name not in counts:
+        counts[name] = 1
+    else:
+        counts[name] = counts[name] + 1
+print(counts)
