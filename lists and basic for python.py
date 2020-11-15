@@ -59,3 +59,18 @@ average = sum(numlist) / len(numlist)
 abc = 'with three words'
 stuff = abc.split()
 print(stuff) # stuff will return a list which is ['with','three','words']
+
+# the split function will seperate the string if it has the space between them
+line = 'a lot         of spaces'
+etc = line.split()
+# etc will return a list like ['a','lot','of','spaces'], no matter how many spaces
+
+line2 = 'first;second;third'
+etc2 = line2.split()
+#etc2 will return a list ['first;second;third']
+# if put the delimiter into split(;)
+etc3 = line2.split(';')
+#etc3 will retun a list ['first','second','third']
+# when u do not specify a delimiter, multiple spaces are treated like one delimiter
+# you can specify what delimiter character to use in the splitting
+# The double split pattern means : split the whole line into pieces, and grab one of piece than split it again
