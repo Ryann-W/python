@@ -77,3 +77,55 @@ print(number)
 print(number.get('xxx',90))
 # some comments from above, if the parameter in the dict, the default value u put in the get cannot be changed, when u print it , it will return the value in dict
 # if the parameter is not in the dict, it will print the value u put in the get function
+
+# counting pattern -- counting words
+
+countss = dict()
+print('Enter a line of text: ')
+line = input('')
+
+words = line.split()
+
+print('words:', words)
+
+for word in words:
+    countss[word] = countss.get(word,0)+1
+
+print(countss)
+print('Counts', countss)
+
+# print the dictionaries
+
+aaa  = {'r':21,'e':45,'v':45,'f':67,'c':34}
+
+for bbb in aaa:
+    print(bbb,aaa[bbb])
+
+#Retrieving lists of Keys and Values
+
+print(aaa.keys())
+print(aaa.values())
+print(aaa.items())
+
+for ccc,ddd in aaa.items():
+    print(ccc,ddd)
+
+# this is an example that open a file, and counting words, finally print the most frequent words
+
+name = input('open file:')
+handle = open(name)
+
+counts2 = dict()
+for line in handle:
+    words = line.split()
+    for word in words:
+        counts2[word] = counts2.get(word,0) + 1
+
+bigcount = None
+bigword = None
+for word, countsss in counts2.items():
+    if bigcount is None or countsss > bigcount:
+        bigcount = countsss
+        bigword = word
+
+print(bigword,bigcount)
