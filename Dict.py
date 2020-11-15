@@ -64,3 +64,16 @@ for name in names:
     else:
         counts[name] = counts[name] + 1
 print(counts)
+
+# the get method for dictionaries
+
+number = dict()
+names2 = ['aaa','aaa','ccc','ccc','vvv','vvv','bbb','ddd','bbb','vvv']
+
+for name in names2:
+    number[name] = number.get(name,0)+1
+print(number)
+
+print(number.get('xxx',90))
+# some comments from above, if the parameter in the dict, the default value u put in the get cannot be changed, when u print it , it will return the value in dict
+# if the parameter is not in the dict, it will print the value u put in the get function
