@@ -61,5 +61,9 @@ newList = sorted(lst, reverse=True)
 
 for value, key in newList[:10]:
     print(key, value)
-    
-    
+
+
+
+cc = {'a':10,'b':1,'c':22}
+
+print( sorted( [ (v,k) for k,v in c.items() ] , reverse=True) )
