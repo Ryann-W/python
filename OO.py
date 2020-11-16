@@ -39,3 +39,26 @@ ann = PartyAnimal()
 print(ann.play())
 print(ann.play())
 
+ann = 34
+print(ann)
+ann = 'ble'
+print(ann)
+
+class name:
+    z = 0
+    name = ""
+    def __init__(self,v):
+        self.name = v
+        print(self.name, "constructed")
+
+    def dog(self):
+        self.z = self.z + 1
+        print(self.name, "pretty count", self.x)
+
+
+car = name("jim")
+car.dog()
+
+car2 = name("frank")
+car.dog()
+car2.dog()
