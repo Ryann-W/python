@@ -59,3 +59,25 @@ while True:
     print(data.decode())
 mysock.close()
 
+# Representing Simple Strings
+# the ord() function tells us the numeric value of a simple ASCII character
+
+print(ord('H')) #return 72
+print(ord('e')) #return 101
+print(ord('\n')) #return 10
+
+# UTF-8
+# in Python 3 , all strings are Unicode
+# reading the data encode and decode 
+
+# String Unicode ----------------->Bytes UTF-8 ------------>socket
+#                      encode()                    send()
+#socket--------------------------->Bytes UTF-8 -------------->String Unicode
+#           recv()                                  decode
+
+# using urllib in Python
+
+import urllib.request, urllib.parse, urllib.error
+fanhd = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
+for line in fanhd:
+    print(line.decode().strip())
