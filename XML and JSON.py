@@ -58,3 +58,19 @@ print('Attr:', tree.find('email').get('hide'))
 
 # JavaScript Object Notation--(JSON)
 
+import json
+data1 = '''{
+"name" : "chuck",
+"phone" : {
+    "type" : "int1",
+   "number": "+1 734 303 4456"
+            },
+"email" : {
+    "hide" : "yes"
+            }
+}'''
+
+info = json.loads(data1)
+print("name:", info["name"])
+print("hide:", info["email"]["hide"])
+print(info)
