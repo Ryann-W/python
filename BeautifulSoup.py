@@ -14,3 +14,8 @@ soup = BeautifulSoup(html, 'html.parser')
 tags = soup('a')
 for tag in tags:
     print(tag.get('href', None))
+
+# Python for Web Service
+# Data on the web
+# agreed way to represent data going between application and across networks
+# two commonly used formats: XML and JSON
