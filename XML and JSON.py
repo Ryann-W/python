@@ -17,3 +17,44 @@
 # Attributes                  </phone>
 #                             <email hide="yes" />
 # Self Closing Tag        </person>
+
+# XML Schema
+
+# commonly XSD structure
+# xs:element
+# xs:sequence
+# xs:complex Type
+
+# for instance
+
+# <xs:complexType name = "person">
+#     <xs:sequence>
+#         <xs:element name="lastname" type="xs:string"/>
+#         <xs:element name="age" type="xs:integer"/>
+#         <xs:element name="dateborn" type="xs:data"/>
+#     <xs:sequence>
+# <xs:complexType>
+# this is like a contract
+
+# with the contract above, here is a piece of XML
+# <person>
+#     <lastname>Severance</lastname>
+#     <age>17</age>
+#     <dateborn>2001-4-17</dateborn>
+# </person>
+
+import xml.etree.ElementTree as ET
+data = '''<person>
+    <name>Chuck</name>
+    <phone type="int1">
+        +1 734 303 4456
+    </phone>
+    <email hide="yes"/>
+</person>'''
+
+tree = ET.fromstring(data)
+print('Name:', tree.find('name').text)
+print('Attr:', tree.find('email').get('hide'))
+
+# JavaScript Object Notation--(JSON)
+
