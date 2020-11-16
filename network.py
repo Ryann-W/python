@@ -15,15 +15,15 @@
 
 # common tcp ports
 
-Telent(23) --Login
-SSH(22) --Secure Login
-HTTP(80) (HyperText Transfer Protocol)
-HTTPS(443)-Secure
-SMTP(25)--Mail
-IMAP(143/220/993) -Mail Retrieval
-POP(109/110) -Mail Retrieval
-DNS(53) - Domain Name
-FTP(21) - File Transfer
+# Telent(23) --Login
+# SSH(22) --Secure Login
+# HTTP(80) (HyperText Transfer Protocol)
+# HTTPS(443)-Secure
+# SMTP(25)--Mail
+# IMAP(143/220/993) -Mail Retrieval
+# POP(109/110) -Mail Retrieval
+# DNS(53) - Domain Name
+# FTP(21) - File Transfer
 
 # the Protocol from FreeCodeCamp
 
@@ -31,3 +31,31 @@ FTP(21) - File Transfer
 # and not bump into each other
 #   On two-way roads in USA, drive on the right-hand side of the road
 #   On two-way roads in the UK, drive on the left-hand side of the road
+
+# for example, http://www.dr-churk.com/page1.htm
+#            protocol       host         document
+ 
+# note from FreeCodeCamp : Getting data from the server
+# each the user clicks on an anchor tag with an href=value to switch to a new page, the browser makes a connection to the web server
+# and issues a "Get" request - to GET the content of the page at the specified URL
+
+# the server returns the HTML document to the Browser which formats and displays the document to the user
+
+### Write a Web Browser
+
+import socket
+
+
+
+mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+mysock.connect(('data.pr4e.org', 80))
+cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode()
+mysock.send(cmd)
+
+while True:
+    data = mysock.recv(1024)
+    if len(data) < 1:
+        break
+    print(data.decode())
+mysock.close()
+
