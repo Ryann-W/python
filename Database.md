@@ -70,3 +70,37 @@ add an ORDER BY clause to SELECT statements to get the results sorted in ascendi
 SELECT*FROM Users ORDER BY email
 
 SELECT*FROM Users ORDER BY name DESC
+
+From FreeCodeCamp
+
+Tables pretty much look like big fast programmable spreadsheets with rows, columns, and commands
+
+The power comes when we have more than one table and we can exploit the relationships between the tables
+
+# some basic rules(from FreeCodeCamp)
+Donnot put the same tring data in twice - use a relationship instead
+
+when there is one thing in the "real world" there should be one copy of that thing in the database
+
+
+# three kinds of keys(from FreeCodeCamp)
+
+Primary key - generally an integer auto-increment field
+
+Logical key - What the outside world uses for lookup
+
+Foreign key - generally an integer key pointing to a row in another table
+
+# Best practices(from FreeCodeCamp)
+
+Never use your logical key as the primary key
+
+Logical keys can and do change, albeit slowly
+
+Relationships that are based on matching sting fields are less efficient than integers
+
+# Foreign keys(from FreeCodeCamp)
+
+A foreign key is when a table has a column that contains a key which points to the primary key of another table.
+
+When all primary keys are integers, then all foreign keys are integers - this is good - very good
