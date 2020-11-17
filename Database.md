@@ -1,6 +1,9 @@
 Database - contains many tables
+
 Relation(or table) - contains tuples and attributes
+
 Tuple (or row) - a set of fields that generally represents an "object" like a person or a music track
+
 Attribute(also column or field) -  one of possibly many elements of data corresponding to the object represented by the row
 (reference form FreeCodeCamp)
 
