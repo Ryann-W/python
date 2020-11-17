@@ -44,3 +44,33 @@ print(ann)
 ann = 'ble'
 print(ann)
 
+# the constructor used to set up variables, the destructor is seldom used.
+
+
+# reference from freecodecamp
+
+# we can create lots of obejects - the class is the template for the object
+
+# we can store each distinct object in its own variable
+
+# we call this having multiple instances of the same class
+
+# each instance has its own copy of the instance variables.
+
+class PartyAnimals:
+    x = 0
+    name = ""
+    def __init__(self,z):
+        self.name = z
+        print(self.name, "constructed")
+
+    def parties(self):
+        self.x = self.x + 1
+        print(self.name,"parties count", self.x)
+
+s = PartyAnimals("sally")
+s.parties()
+
+j = PartyAnimals("Jim")
+j.parties()
+s.parties()
