@@ -73,4 +73,16 @@ s.parties()
 
 j = PartyAnimals("Jim")
 j.parties()
-s.parties()
+s.parties()   # the value return 2 bacause s.parties already have 1, and not becasue the j.parties
+
+# Inheritance
+
+# Some definitions of class reference from FreeCodeCamp
+
+# Class - a template
+# Attribute - A variable within a class
+# Method - A function within a class
+# Object - A particular instance of a class
+# Constructor - Code that runs when an object is created
+# Inheritance - The ability to extend a class to make a new class
+
