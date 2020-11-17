@@ -38,3 +38,24 @@ SqlServer - Very nice - from Microsoft(also Access)
 Many other smaller projects, free and open source 
 HSQL, SQLite, Postgres... (From FreeCodeCamp)
 
+For some basic operations in SQLite
+
+SQL : Insert - The insert statement inserts a row into table
+
+INSERT INTO User(name,email)VALUES('Mike','mike@outlook.com')
+(multiple lines use semi comma ;)
+
+SQL : Delete - Deletes a row in a table based on a selection criteria
+
+DELETE FROM Users WHERE email='mike@outlook.com'
+
+SQL : Updata - Allows the updating of a field with a where clause
+
+UPDATE Users SET name='Charles'WHERE email='csev@umich.edu'
+
+Retrieving Records: Select
+
+The select statement retrieves a group of records - you can either retrieve all the records or a subset of the records with a WHERE clause
+
+SELECT*FROM Users
+SELECT*FROM Users WHERE email='csev@umich.edu'
