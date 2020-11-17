@@ -24,3 +24,17 @@ Tables / Relations
 SQL = Strcutured Query Language is the language we use to issue commands to the databse
 
 Create a table / Retrieve some data / Insert data / Delete data
+
+Common database Systems
+
+Three major Database Management System in wide use
+
+Oracle - Large, commercial, enterprise-scale, very very tweakable
+
+MySql - Simpler but very fast and scalable - commercial open source
+
+SqlServer - Very nice - from Microsoft(also Access)
+
+Many other smaller projects, free and open source 
+HSQL, SQLite, Postgres... (From FreeCodeCamp)
+
