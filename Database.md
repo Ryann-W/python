@@ -62,3 +62,11 @@ The select statement retrieves a group of records - you can either retrieve all 
 
 SELECT*FROM Users
 SELECT*FROM Users WHERE email='csev@umich.edu'
+
+Sorting with ORDER BY
+
+add an ORDER BY clause to SELECT statements to get the results sorted in ascending or descending order
+
+SELECT*FROM Users ORDER BY email
+
+SELECT*FROM Users ORDER BY name DESC
