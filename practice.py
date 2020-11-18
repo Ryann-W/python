@@ -78,8 +78,7 @@ print("Average spam confidence:",average)
 
 print("Done")
 
-'''
-'''
+
 #8.4 Open the file romeo.txt and read it line by line. 
 # For each line, split the line into a list of words using the split() method. 
 # The program should build a list of words. 
@@ -99,11 +98,13 @@ for line in fhand:
 
 print(list(set(sorted(lst))))
     
-'''
-fname = input("Enter file name: ")
-if len(fname) < 1 : fname = "mbox-short.txt"
 
-fh = open(fname)
+
+
+# fname = input("Enter file name: ")
+# if len(fname) < 1 : fname = "mbox-short.txt"
+
+fh = open("mbox-short.txt")
 count = 0
 odd = 0
 for line in fh:
@@ -114,3 +115,50 @@ for line in fh:
 
 print("There were", count, "lines in the file with From as the first word")
 
+'''
+
+handle = open("mbox-short.txt")
+count = 0
+odd = 0
+value = 0
+lst = list()
+dt = dict()
+dt2 = dict()
+dt3 =dict()
+for line in handle:
+    odd = odd + 1
+    if(line.startswith("From")) and (odd % 2 == 0):
+        print(line.split()[1])
+        lst.append(line.split()[1])
+
+print(lst)
+
+for key in lst:
+    dt[key] = dt.get(key,0) + 1
+
+print("method1: ",dt)
+
+for key in lst:
+    if key not in dt2: # if the key is not in dictionaries, set the value to 1
+        dt2[key] = 1
+    else:
+        dt2[key] = dt2[key] + 1
+    
+print("method2: ",dt2)
+
+for item,value in dt.items():
+   print("converse the dic: ",(value,item))
+   dt3[value] = item
+
+# for reverse the key and value in a dict , another shorter method:
+
+dt33 = [(value,key) for key,value in dt.items()] # it returns a touple list not a dict
+
+
+
+print(max(dt3.items())[1],max(dt3))
+
+print("------------------")
+print("reverse a dict using for loop: ",dt3)
+print("more efficient method: ", dt33)
+print("---------------------")
