@@ -79,7 +79,7 @@ print("Average spam confidence:",average)
 print("Done")
 
 '''
-
+'''
 #8.4 Open the file romeo.txt and read it line by line. 
 # For each line, split the line into a list of words using the split() method. 
 # The program should build a list of words. 
@@ -99,5 +99,18 @@ for line in fhand:
 
 print(list(set(sorted(lst))))
     
- 
+'''
+fname = input("Enter file name: ")
+if len(fname) < 1 : fname = "mbox-short.txt"
+
+fh = open(fname)
+count = 0
+odd = 0
+for line in fh:
+    odd = odd + 1
+    if(line.startswith("From")) and (odd % 2 == 0):
+        print(line.split()[1])
+        count = count + 1
+
+print("There were", count, "lines in the file with From as the first word")
 
