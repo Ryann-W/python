@@ -6,7 +6,7 @@
 # Once 'done' is entered, print out the largest and smallest of the numbers. 
 # If the user enters anything other than a valid number catch it with a try/except and put out an appropriate message and ignore the number. 
 # Enter 7, 2, bob, 10, and 4 and match the output below.
-'''
+
 largest = None
 smallest = None
 lst = list()
@@ -99,7 +99,7 @@ for line in fhand:
 print(list(set(sorted(lst))))
     
 
-
+#-------------------------------------------------------------------------
 
 # fname = input("Enter file name: ")
 # if len(fname) < 1 : fname = "mbox-short.txt"
@@ -115,8 +115,9 @@ for line in fh:
 
 print("There were", count, "lines in the file with From as the first word")
 
-'''
-'''
+
+#-------------------------------------------------------------------------
+
 handle = open("mbox-short.txt")
 count = 0
 odd = 0
@@ -162,8 +163,8 @@ print("------------------")
 print("reverse a dict using for loop: ",dt3)
 print("more efficient method: ", dt33)
 print("---------------------")
-'''
 
+#-------------------------------------------------------------------------
 
 fh = open("mbox-short.txt")
 lst = list()
@@ -188,3 +189,5 @@ print(dt)
 
 for a,b in sorted(dt.items()):
     print(a,b)
+
+#-------------------------------------------------------------------------
