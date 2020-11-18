@@ -31,5 +31,11 @@ for b in lst:
 print("Maximum is ", largest)	
 print("Minimum is ", smallest)
 
-
+tot = 0
+sum = 0
+for i in [5, 4, 3, 2, 1] :
+    tot = tot + 1
+    sum = sum + i
+print(tot)
+print(sum)
 
