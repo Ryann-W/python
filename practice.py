@@ -39,3 +39,18 @@ for i in [5, 4, 3, 2, 1] :
 print(tot)
 print(sum)
 
+# the find() method is find the position in a string , position means index in a string 
+
+
+for letter in 'banana' :
+    print(letter)
+
+
+
+fname = input('Enter the file name: ')
+
+file = open(fanme)
+for line in file:
+    if not line.startswith("X-DSPAM-Confidence:"):
+        continue
+    print(line)
