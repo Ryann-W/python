@@ -6,7 +6,7 @@
 # Once 'done' is entered, print out the largest and smallest of the numbers. 
 # If the user enters anything other than a valid number catch it with a try/except and put out an appropriate message and ignore the number. 
 # Enter 7, 2, bob, 10, and 4 and match the output below.
-
+'''
 largest = None
 smallest = None
 lst = list()
@@ -189,5 +189,89 @@ print(dt)
 
 for a,b in sorted(dt.items()):
     print(a,b)
+
+#-------------------------------------------------------------------------
+
+'''
+'''
+import socket
+
+mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+mysock.connect(('data.pr4e.org', 80))
+cmd = 'GET http://data.pr4e.org/intro-short.txt HTTP/1.0\r\n\r\n'.encode()
+mysock.send(cmd)
+
+while True:
+    data = mysock.recv(512)
+    if len(data) < 1:
+        break
+    print(data.decode(),end='')
+
+mysock.close()
+
+'''
+#-------------------------------------------------------------------------
+'''
+# To run this, download the BeautifulSoup zip file
+# http://www.py4e.com/code3/bs4.zip
+# and unzip it in the same directory as this file
+
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+import ssl
+
+# Ignore SSL certificate errors
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+
+url = input('Enter - ')
+html = urlopen(url, context=ctx).read()
+soup = BeautifulSoup(html, "html.parser")
+
+# Retrieve all of the anchor tags
+tags = soup('span')
+count = 0
+total = 0
+for tag in tags:
+    # Look at the parts of a tag
+    print('TAG:', tag)
+    print('Contents:',tag.contents[0])
+    print('Attrs:',tag.attrs)
+    count = count + 1
+    total = total + int(tag.contents[0])
+
+print("Count",count)
+print("Sum",total)
+'''
+#-------------------------------------------------------------------------
+
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+import ssl
+
+# Ignore SSL certificate errors
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+
+url = input('Enter - ')
+html = urlopen(url, context=ctx).read()
+soup = BeautifulSoup(html, "html.parser")
+
+# Retrieve all of the anchor tags
+tags = soup('span')
+count = 0
+total = 0
+for tag in tags:
+    # Look at the parts of a tag
+    # print('TAG:', tag)
+    # print('Contents:',tag.contents[0])
+    # print('Attrs:',tag.attrs)
+     count = count + 1
+     total = total + int(tag.contents[0])
+
+print("Count",count)
+print("Sum",total)
 
 #-------------------------------------------------------------------------
