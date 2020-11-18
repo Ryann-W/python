@@ -46,7 +46,7 @@ for letter in 'banana' :
     print(letter)
 
 
-'''
+
 
 # 7.2 Write a program that prompts for a file name, then opens that file and reads through the file, looking for lines of the form:
 # X-DSPAM-Confidence:    0.8475
@@ -74,7 +74,19 @@ for value in final:
     count = count + 1
 
 average = total / count
-print(average)
+print("Average spam confidence:",average)
 
 print("Done")
 
+'''
+
+fname = input("Enter a file name:")
+fhand = open(fname)
+lst = list()
+
+for line in fhand:
+
+   lst = lst + line.split()
+    
+ 
+print(sorted(lst))
