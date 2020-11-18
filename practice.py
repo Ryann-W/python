@@ -116,7 +116,7 @@ for line in fh:
 print("There were", count, "lines in the file with From as the first word")
 
 '''
-
+'''
 handle = open("mbox-short.txt")
 count = 0
 odd = 0
@@ -162,3 +162,29 @@ print("------------------")
 print("reverse a dict using for loop: ",dt3)
 print("more efficient method: ", dt33)
 print("---------------------")
+'''
+
+
+fh = open("mbox-short.txt")
+lst = list()
+
+for line in fh:
+    if line.startswith("From"):
+        lst.append(line.split(":")[0][-2:])
+        #print(lst)
+
+print(lst)
+dt = dict()
+for item in lst:
+    dt[item] = dt.get(item,0) + 1
+
+
+print(dt)
+
+del dt['om']
+
+
+print(dt)
+
+for a,b in sorted(dt.items()):
+    print(a,b)
