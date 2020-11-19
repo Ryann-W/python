@@ -318,6 +318,16 @@ print(lst[-1])
 # http://www.py4e.com/code3/bs4.zip
 # and unzip it in the same directory as this file
 
+#Find the link at position 3 (the first name is 1). 
+# Follow that link. Repeat this process 4 times. 
+# The answer is the last name that you retrieve.
+# Sequence of names: Fikret Montgomery Mhairade Butchi Anayah
+
+#--------------------------------------------
+# this means when u found the name in position 3 and click, then find another name
+# in position, click it again , and repeat process 4 times
+
+
 import urllib.request, urllib.parse, urllib.error
 from bs4 import BeautifulSoup
 import ssl
@@ -328,10 +338,46 @@ ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
 url = input('Enter - ')
+# count = int(input('Enter counts - '))
+# position = int(input('Enter position - '))
+a = 0
+b = 0
+c = 0
 html = urllib.request.urlopen(url, context=ctx).read()
 soup = BeautifulSoup(html, 'html.parser')
 
 # Retrieve all of the anchor tags
 tags = soup('a')
+
+
 for tag in tags:
-    print(tag.get('href', None))
+    a = a + 1
+    if a == 18:
+        break
+                        
+    print(tag.get('href', None))  # for test
+
+targetTag = tag.get('href',None) # the target tag we looking for --- in the posiiton 3
+# print("target Tag: ", targetTag)
+
+while b<6:
+    url = targetTag
+    html = urllib.request.urlopen(url, context=ctx).read()
+    soup = BeautifulSoup(html, 'html.parser')
+
+    newTag = soup('a')
+
+    for tag in newTag:
+        c = c + 1
+        if c == 18:
+            break
+        
+    print("new name in target tag: ",tag.get('href',None))
+    targetTag = tag.get('href', None)
+    extraTag = tag.get('href', None).split("_")[-1].split(".")[0]
+    print(extraTag)
+
+    c = 0
+    b = b + 1
+
+print("the final name is:",extraTag)
