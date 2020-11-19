@@ -381,3 +381,17 @@ while b<6:
     b = b + 1
 
 print("the final name is:",extraTag)
+
+
+'''
+    this practice including:
+                            variables
+                            loops
+                            def
+                            Web
+                            List
+                            Dict
+                            Tuple
+                            ...
+                            '''
+            
