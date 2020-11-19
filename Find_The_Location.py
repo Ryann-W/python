@@ -41,3 +41,5 @@ while True:
 
     print('lat', lat, 'lng', lng)
     print(location)
+
+    print(results)
